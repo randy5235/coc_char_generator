@@ -1,3 +1,17 @@
 body {
   background: gray;
 }
+
+#diceValue {
+  float: left;
+  border: 1px solid black;
+}
+
+#submit {
+  float: left;
+  border: 1px solid red;
+}
+
+#expresssionInput {
+  float: left;
+}
