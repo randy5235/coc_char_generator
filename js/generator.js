@@ -7,8 +7,8 @@ function diceRoller() {
   var count = diceExpression.match(/^[^d]*/)[0] || 1;
   // console.log(count);
   var die = diceExpression.match(/d(.[^+\-*\/\s]*)/)[1];
-  var operator = diceExpression.match(/[\+\-\/\*]/)[0] || 0;
-  var operand = diceExpression.match(/[\+\-\/\*](.*)/)[1];
+  var operator = diceExpression.match(/[\+\-\/\*]/) ? diceExpression.match(/[\+\-\/\*]/)[0] : 0;
+  var operand = diceExpression.match(/[\+\-\/\*](.*)/) ? diceExpression.match(/[\+\-\/\*](.*)/)[1] : 0;
   var total = 0;
   for (var i = 0; i < count; i++) {
     total += rollDice(die);
@@ -24,6 +24,7 @@ function diceRoller() {
       total /= parseInt(operand);
     }
   }
+  console.log(total);
   document.getElementById('diceValue').innerHTML = total;
 };
 
